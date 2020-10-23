@@ -64,8 +64,8 @@ h2 {
     display: none;
 }
 
-#one:checked~.panels #one-panel,
-#two:checked~.panels #two-panel {
+#one:checked~.panels #personal-panel,
+#two:checked~.panels #work-panel {
     display: block
 }
 
