@@ -7,39 +7,78 @@
 
     <!-- You don't need to specify the type attribute anymore (for <script> and <link>) -->
     <!-- A modern browser will infer that the file is javascript or css  -->
-    <script src=""></script>
+
     <link rel="stylesheet" href="css/traceme.css" />
+
 
     <title>Trace me application</title>
 </head>
 
 <body>
-    <h2>Tasks</h2>
+    <h2>Ulohy</h2>
 
     <div class="wrapper">
         <input class="radio" id="one" name="group" type="radio" checked>
         <input class="radio" id="two" name="group" type="radio">
 
         <div class="tabs">
-            <label class="tab" id="one-tab" for="one">Personal</label>
-            <label class="tab" id="two-tab" for="two">Work</label>
+            <label class="tab" id="one-tab" for="one">Osobne</label>
+            <label class="tab" id="two-tab" for="two">Pracovne</label>
 
         </div>
         <div class="panels">
             <div class="panel" id="personal-panel">
-                <section>
-                    <header class="panel-title">Why Learn CSS?</header>
-                    <p>Without CSS, every web page would be drab plain text and images that flowed straight down the page. With CSS, you can add color and background images and change the layout of your page — your web pages can feel like works of art!</p>
+
+                <section id="section1" onclick="editExistingTask(this.id);">
+                    <header class="panel-title">Sprav appku na trackovanie mojich aktivit</header>
+                    <p>Potrebujem mat appku na trackovanie mojich aktivit vdaka ktorej uvidim progress a ktora mi pomoze zamerat sa na par veci a hlavne ich dokoncit.</p>
                 </section>
-                <section>
-                    <header class="panel-title">Why Learn CSS?</header>
-                    <p>Without CSS, every web page would be drab plain text and images that flowed straight down the page. With CSS, you can add color and background images and change the layout of your page — your web pages can feel like works of art!</p>
+                <section id="section2" onclick="editExistingTask(this.id);">
+                    <header class="panel-title">Sprav police do kumbalu</header>
+                    <p>Potrebujem spravit police do kumbalu nad pracku a nahradit tak stary regal ktory bol zly a nevhodny.</p>
                 </section>
-                <section>
-                    <header class="panel-title">Why Learn CSS?</header>
-                    <p>Without CSS, every web page would be drab plain text and images that flowed straight down the page. With CSS, you can add color and background images and change the layout of your page — your web pages can feel like works of art!</p>
+                <section id="section3" onclick="editExistingTask(this.id);">
+                    <header class="panel-title">Vytried a zalohuj fotky</header>
+                    <p>Musim vytriedit a zalohovat fotky na svoje zalohovacie disky.</p>
                 </section>
-                <button type="button" id="add_to_personal">Add new task</button>
+                <button type="button" id="add_to_personal" onclick="addNewTask(event);">Pridaj ulohu</button>
+
+                <!-- Modal for new task -->
+                <div id="newTask" class="modalNewTask">
+
+                    <!-- Modal content for new task -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <form onclick="addNewTaskAction()" id="addNewTaskActionForm">
+                            <header>
+                                <label>Nastav meno tasku</label><br/>
+                                <textarea id="headerId" placeholder="Pridaj meno tasku" cols="50" rows="1"></textarea>
+                            </header>
+                            <p><label>Pridaj strucny popis pre tento task</label><br />
+                                <textarea id="taskDescription" placeholder="Pridaj strucny popis tasku" inputmode="verbatim" cols="50" rows="1"></textarea>
+                            </p>
+                            <button type="submit">Uloz task</button>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- Modal for editing existing task -->
+                <div id="existingTask" class="modalExistingTask">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <header>
+                            <label>Nastav meno tasku</label>
+                            <textarea id="headerId" inputmode="verbatim" maxlength="80"></textarea>
+                        </header>
+                        <p><label>Pridaj strucny popis pre tento task</label>
+                            <textarea id="taskDescription" inputmode="verbatim" maxlength="100"></textarea>
+                        </p>
+                    </div>
+
+                </div>
 
             </div>
             <!-- end of panel one-->
@@ -68,6 +107,7 @@
         </div>
     </div>
 
+    <script src="js/traceme.js"></script>
 </body>
 
 </html>
