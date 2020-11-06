@@ -8,6 +8,7 @@
     <!-- You don't need to specify the type attribute anymore (for <script> and <link>) -->
     <!-- A modern browser will infer that the file is javascript or css  -->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/traceme.css" />
 
 
@@ -26,33 +27,33 @@
             <label class="tab" id="two-tab" for="two">Pracovne</label>
 
         </div>
-        <div class="panels">
-            <div class="panel" id="personal-panel">
+        <div class="panels" id="bothPanels">
+            <div class="panel" id="personalPanel">
 
                 <section id="section1" onclick="editExistingTask(this.id);">
-                    <header class="panel-title">Sprav appku na trackovanie mojich aktivit</header>
-                    <p>Potrebujem mat appku na trackovanie mojich aktivit vdaka ktorej uvidim progress a ktora mi pomoze zamerat sa na par veci a hlavne ich dokoncit.</p>
+                    <header class="task-title">Sprav appku na trackovanie mojich aktivit</header>
+                    <p class=task-description>Potrebujem mat appku na trackovanie mojich aktivit vdaka ktorej uvidim progress a ktora mi pomoze zamerat sa na par veci a hlavne ich dokoncit.</p>
                 </section>
                 <section id="section2" onclick="editExistingTask(this.id);">
-                    <header class="panel-title">Sprav police do kumbalu</header>
-                    <p>Potrebujem spravit police do kumbalu nad pracku a nahradit tak stary regal ktory bol zly a nevhodny.</p>
+                    <header class="task-title">Sprav police do kumbalu</header>
+                    <p class=task-description>Potrebujem spravit police do kumbalu nad pracku a nahradit tak stary regal ktory bol zly a nevhodny.</p>
                 </section>
                 <section id="section3" onclick="editExistingTask(this.id);">
-                    <header class="panel-title">Vytried a zalohuj fotky</header>
-                    <p>Musim vytriedit a zalohovat fotky na svoje zalohovacie disky.</p>
+                    <header class="task-title">Vytried a zalohuj fotky</header>
+                    <p class=task-description>Musim vytriedit a zalohovat fotky na svoje zalohovacie disky.</p>
                 </section>
-                <button type="button" id="add_to_personal" onclick="addNewTask(event);">Pridaj ulohu</button>
+                <!-- <button type="button" id="add_to_personal" onclick="addNewTask(event);">Pridaj ulohu</button> -->
 
                 <!-- Modal for new task -->
-                <div id="newTask" class="modalNewTask">
+                <!-- <div id="newTask" class="modalNewTask">
 
-                    <!-- Modal content for new task -->
+                    <!-- Modal content for new task
                     <div class="modal-content">
                         <span class="close">&times;</span>
-                        <form onclick="addNewTaskAction()" id="addNewTaskActionForm">
+                        <form onsubmit="addNewTaskAction()" id="addNewTaskActionForm" >
                             <header>
                                 <label>Nastav meno tasku</label><br/>
-                                <textarea id="headerId" placeholder="Pridaj meno tasku" cols="50" rows="1"></textarea>
+                                <textarea id="taskName" placeholder="Pridaj meno tasku" cols="50" rows="1"></textarea>
                             </header>
                             <p><label>Pridaj strucny popis pre tento task</label><br />
                                 <textarea id="taskDescription" placeholder="Pridaj strucny popis tasku" inputmode="verbatim" cols="50" rows="1"></textarea>
@@ -61,7 +62,20 @@
                         </form>
                     </div>
 
-                </div>
+                </div> -->
+                <!-- button to show simple form to add new section - a.k.a. task -->
+                <button type="button" id="showNewTaskFormButton" onclick="showNewTaskButtonAction()">Pridaj ulohu</button>
+                <!-- <form onsubmit="addNewTaskAction()" id="addNewTaskActionForm" style="display: none;"> -->
+                    <form  id="addNewTaskActionForm" style="display: none;" onsubmit="addNewTaskAction(event)">
+                    <header>
+                        <label>Nastav meno tasku</label><br/>
+                        <textarea id="taskName" placeholder="Pridaj meno tasku" cols="50" rows="1"></textarea>
+                    </header>
+                    <p><label>Pridaj strucny popis pre tento task</label><br />
+                        <textarea id="taskDescription" placeholder="Pridaj strucny popis tasku" inputmode="verbatim" cols="50" rows="1"></textarea>
+                    </p>
+                    <button type="submit">Uloz task</button>
+                </form>
 
                 <!-- Modal for editing existing task -->
                 <div id="existingTask" class="modalExistingTask">
@@ -82,10 +96,10 @@
 
             </div>
             <!-- end of panel one-->
-            <div class="panel" id="work-panel">
+            <div class="panel" id="workPanel">
                 <section>
                     <div class="panel-title">Take-Away Skills</div>
-                    <p>You will learn many aspects of styling web pages! You’ll be able to set up the correct file structure, edit text and colors, and create attractive layouts. With these skills, you’ll be able to customize the appearance of your web pages
+                    <p class=task>You will learn many aspects of styling web pages! You’ll be able to set up the correct file structure, edit text and colors, and create attractive layouts. With these skills, you’ll be able to customize the appearance of your web pages
                         to suit your every need!</p>
                 </section>
                 <section>
