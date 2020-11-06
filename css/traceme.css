@@ -55,8 +55,8 @@ h2 {
     }
 }
 
-.panel-title {
-    font-size: 1.5em;
+.task-title {
+    font-size: 1.2em;
     font-weight: bold
 }
 
@@ -64,8 +64,8 @@ h2 {
     display: none;
 }
 
-#one:checked~.panels #personal-panel,
-#two:checked~.panels #work-panel {
+#one:checked~.panels #personalPanel,
+#two:checked~.panels #workPanel {
     display: block
 }
 
@@ -78,6 +78,7 @@ h2 {
 
 section:hover {
     background-color: aquamarine;
+    border: #000 2px solid;
 }
 
 
@@ -165,4 +166,9 @@ section:hover {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.task-description {
+    font-family: monospace;
+    font-size: 1em;
 }
