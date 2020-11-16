@@ -46,6 +46,45 @@ h2 {
     animation: fadein .8s;
 }
 
+.actions {
+    margin-left: auto;
+}
+
+i {
+    color: rgb(218, 36, 202);
+    font-size: 0.7em !important;
+}
+
+.fa-check:hover {
+    font-size: 1.3em !important;
+    /* color: red; */
+}
+
+.fa-tasks:hover {
+    font-size: 1.3em !important;
+    /* color: red; */
+}
+
+.fa-archive:hover {
+    font-size: 1.3em !important;
+    /* color: red; */
+}
+
+.fa-trash:hover {
+    font-size: 1.3em !important;
+    /* color: red; */
+}
+
+header {
+    display: flex;
+}
+
+header.task-title>span.actions {
+    /* display: block; */
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
 @keyframes fadein {
     from {
         opacity: 0;
@@ -56,8 +95,9 @@ h2 {
 }
 
 .task-title {
-    font-size: 1.2em;
-    font-weight: bold
+    font-size: 1.4em;
+    font-weight: bold;
+    justify-content: left;
 }
 
 .radio {
@@ -171,4 +211,99 @@ section:hover {
 .task-description {
     font-family: monospace;
     font-size: 1em;
+}
+
+#addNewTaskActionForm {
+    display: flex;
+    font-family: Verdana;
+}
+
+textarea {
+    resize: none;
+}
+
+.radio {
+    position: relative;
+    cursor: pointer;
+    line-height: 20px;
+    font-size: 14px;
+    margin: 15px;
+}
+
+.label {
+    position: relative;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid gray;
+    border-radius: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* this is to mark activities within specific task */
+
+.activities {
+    background-color: darkcyan;
+}
+
+
+/* MODAL
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+}
+
+.modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-dialog {
+    position: relative;
+    max-width: 800px;
+    max-height: 80vh;
+    border-radius: 5px;
+    background: var(--white);
+    overflow: auto;
+    cursor: default;
+}
+
+.modal-dialog>* {
+    padding: 1rem;
+}
+
+.modal-header,
+.modal-footer {
+    background: var(--lightgray);
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header .close-modal {
+    font-size: 1.5rem;
+}
+
+.modal p+p {
+    margin-top: 1rem;
 }
