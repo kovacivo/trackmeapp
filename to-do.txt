@@ -1,0 +1,39 @@
+To Do for trace me application
+
+-> vymysliet co mozno s danym taskom robit
+   -> mozno ho:
+      -> zmazat
+         -> zmizne uplne zo struktury
+      -> oznacit za hotovy (done)
+      -> oznacit ako ze na nom prave clovek robi (in progress)
+-> pre kazdy task spravit okno pre aktivity
+   
+
+
+Logika pre appku
+-> potrebujem mat najprv predstavu/ukazku ako to ma vyzerat s ohl. na funkcionalitu
+-> mam ulohu ktora ma jasne zadanie: nazov a popis
+   -> dana uloha ma nejake (aspon jednu) aktivity -> teda co vsetko som v ramci nej spravil, resp. spravim
+      -> to ma byt kvazi nejaky plan alebo skor checklist pre moju kontrolu a orientaciu kde v ramci danej veci (ulohy) som/nachadzam sa a co prave robim, resp. ma este caka
+
+-> mam ulohy z ktorych kazda z nich ma aktivity(min. jednu a viac)
+-> uloha moze mat nasledovne stavy (svojim sposobom druhy/typy):
+   -> "in progress" - je rozrobena vec
+   -> "done" - je hotova(ukoncena)
+
+
+
+Priklad/ukazka ako to ma vyzerat v praxi
+-> napriklad robota
+Task:
+  -> name: 
+     choose and learn to configure software for updating/upgrading embedded device
+     -----------------------------------------------------------------------------
+  -> description: 
+     the aim here is to decide which software (open source only) to choose for proper updating/upgrading embedded devices
+     ====================================================================================================================
+
+  Activities (for this task):
+  -> activity #1: download and install RAUC and configure it
+  -> activity #2: create OS/partition image
+  -> activity #3: create rauc bundle from previously created image

@@ -45,7 +45,7 @@
                     </div>
                 </form>
 
-                <section id="section1" onclick="editExistingTask(this.id);" status="done" class="open-modal" data-open="modal1">
+                <section id="section1" onclick="editExistingTask(this.id);" status="done">
 
                     <header class="task-title">Sprav appku na trackovanie mojich aktivit
                         <span class="actions">
@@ -55,48 +55,26 @@
                             <a href=""><i class="fa fa-trash"></i></a>
                         </span>
                     </header>
+
                     <p class=task-description>Potrebujem mat appku na trackovanie mojich aktivit vdaka ktorej uvidim progress a ktora mi pomoze zamerat sa na par veci a hlavne ich dokoncit.</p>
 
-                    <!-- activities for this task - ulohu
-                    <div style="display: none;" class="activities modal">
+                    <!-- activities for this task - ulohu  -->
+                    <article class=activity-description style="display: none;">
                         <h3>Activities are listed here</h3>
-                        <section>
+                        <div>
                             <header>Sprav lepsiu grafiku cez CSS</header>
                             <p>Studujem CSS</p>
-                        </section>
-                        <section>
-                            <header>AAA</header>
-                            <p>AAA bbb CCC</p>
-                        </section>
-                    </div>
-                -->
-
-                    <div class="modal" id="modal1" data-animation="slideInOutLeft">
-                        <div class="modal-dialog">
-                            <header class="modal-header">
-                                The header of the first modal
-                                <button class="close-modal" aria-label="close modal" data-close>
-                          ✕  
-                        </button>
-                            </header>
-                            <section class="modal-content">
-                                <p><strong>Press ✕, ESC, or click outside of the modal to close it</strong></p>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellendus reprehenderit accusamus totam ratione! Nesciunt, nemo dolorum recusandae ad ex nam similique dolorem ab perspiciatis qui. Facere, dignissimos. Nemo,
-                                    ea.
-                                </p>
-                                <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a
-                                    trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying
-                                    consequences, or one who avoids a pain that produces no resultant pleasure</p>
-                                <p>Nullam vitae enim vel diam elementum tincidunt a eget metus. Curabitur finibus vestibulum rutrum. Vestibulum semper tellus vitae tortor condimentum porta. Sed id ex arcu. Vestibulum eleifend tortor non purus porta dapibus</p>
-                                <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a
-                                    trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying
-                                    consequences, or one who avoids a pain that produces no resultant pleasure</p>
-                            </section>
-                            <footer class="modal-footer">
-                                The footer of the first modal
-                            </footer>
                         </div>
-                    </div>
+                        <div>
+                            <header>EEE</header>
+                            <p>eee eee</p>
+                        </div>
+                        <button onclick="close_activities();">Close</button>
+                    </article>
+
+
+
+
                 </section>
                 <section id="section2" onclick="editExistingTask(this.id);" status="in progress" class="open-modal" data-open="modal1">
                     <header class="task-title">Sprav police do kumbalu
@@ -119,12 +97,24 @@
                         </span>
                     </header>
                     <p class=task-description>Musim vytriedit a zalohovat fotky na svoje zalohovacie disky.</p>
+                    <!-- activities for this task - ulohu  -->
+                    <article class=activity-description style="display: none;">
+                        <h3>Activities are listed here</h3>
+                        <div>
+                            <header>Sprav lepsiu grafiku cez CSS</header>
+                            <p>Studujem CSS</p>
+                        </div>
+                        <div>
+                            <header>EEE</header>
+                            <p>eee eee</p>
+                        </div>
+                        <button onclick="close_activities(this.id);">Close</button>
+                    </article>
                 </section>
 
                 <!-- button to show simple form to add new section - a.k.a. task -->
                 <button type="button" id="showNewTaskFormButton" onclick="showNewTaskButtonAction()">Pridaj
                     ulohu</button>
-                <!-- <form onsubmit="addNewTaskAction()" id="addNewTaskActionForm" style="display: none;"> -->
                 <form id="addNewTaskActionForm" style="display: none;" onsubmit="addNewTaskAction(event)">
 
                     <label>Nastav meno tasku</label>
@@ -137,22 +127,7 @@
                     <button type="submit">Uloz task</button>
                 </form>
 
-                <!-- Modal for editing existing task -->
-                <!-- <div id="existingTask" class="modalExistingTask">
 
-                    
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <header>
-                            <label>Nastav meno tasku</label>
-                            <textarea id="headerId" inputmode="verbatim" maxlength="80"></textarea>
-                        </header>
-                        <p><label>Pridaj strucny popis pre tento task</label>
-                            <textarea id="taskDescription" inputmode="verbatim" maxlength="100"></textarea>
-                        </p>
-                    </div>
-
-                </div> -->
 
             </div>
             <!-- end of panel one-->
